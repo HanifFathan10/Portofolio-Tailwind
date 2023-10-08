@@ -4,7 +4,7 @@ window.onscroll = function () {
   const fixedNav = header.offsetTop;
   const toTop = document.querySelector("#to-top");
 
-  if (window.pageYOffset > fixedNav) {
+  if (window.scrollY > fixedNav) {
     header.classList.add("navbar-fixed");
     toTop.classList.remove("hidden");
     toTop.classList.add("flex");
@@ -60,9 +60,13 @@ if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.match
 }
 
 if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+  html.classList.add("dark");
+  localStorage.theme = "dark";
   gambarA.style.display = "none";
   gambarB.style.display = "block";
 } else {
+  html.classList.remove("dark");
+  localStorage.theme = "light";
   gambarA.style.display = "block";
   gambarB.style.display = "none";
 }
