@@ -35,22 +35,16 @@ window.addEventListener("click", function (e) {
 // dark mode
 const darkToggle = document.querySelector("#dark-toggle");
 const html = document.querySelector("html");
-// const gambarA = document.querySelector("#gambarA");
-// const gambarB = document.querySelector("#gambarB");
 
 darkToggle.addEventListener("click", function () {
   if (darkToggle.checked) {
-    console.log("button diclick dark mode")
+    console.log("button diclick dark mode");
     html.classList.add("dark");
     localStorage.theme = "dark";
-    // gambarA.style.display = "none";
-    // gambarB.style.display = "block";
   } else {
-    console.log("button diclick light mode")
+    console.log("button diclick light mode");
     html.classList.remove("dark");
     localStorage.theme = "light";
-    // gambarA.style.display = "block";
-    // gambarB.style.display = "none";
   }
 });
 
@@ -60,14 +54,6 @@ if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.match
 } else {
   darkToggle.checked = false;
 }
-
-// if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-//   gambarA.style.display = "none";
-//   gambarB.style.display = "block";
-// } else {
-//   gambarA.style.display = "block";
-//   gambarB.style.display = "none";
-// }
 
 // validasi form
 const contactForm = document.getElementById("contact-form");
