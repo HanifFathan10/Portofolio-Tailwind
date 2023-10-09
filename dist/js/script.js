@@ -34,11 +34,24 @@ darkToggle.addEventListener("click", function () {
   if (darkToggle.checked) {
     html.classList.add("dark");
     localStorage.theme = "dark";
+    document.getElementById("darkMode").style.display = "block";
+    document.getElementById("lightMode").style.display = "none";
   } else {
     html.classList.remove("dark");
     localStorage.theme = "light";
+    document.getElementById("darkMode").style.display = "none";
+    document.getElementById("lightMode").style.display = "block";
   }
 });
+
+if (localStorage.theme === "dark") {
+  document.getElementById("darkMode").style.display = "block";
+  document.getElementById("lightMode").style.display = "none";
+} else {
+  document.getElementById("darkMode").style.display = "none";
+  document.getElementById("lightMode").style.display = "block";
+}
+
 // pindahkan posisi toggle sesuai mode
 if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
   darkToggle.checked = true;
