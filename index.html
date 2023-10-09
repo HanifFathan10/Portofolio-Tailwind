@@ -30,13 +30,15 @@
       if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
         document.documentElement.classList.add("dark");
         localStorage.theme = "dark";
+        console.log("HAIII!!")
       } else {
         document.documentElement.classList.remove("dark");
         localStorage.theme = "light"
+        console.log("HUHUYYY")
       }
     </script>
   </head>
-  <body class="font-poppins scroll-smooth">
+  <body class="font-poppins">
     <!-- Navbar -->
     <header class="bg-transparent absolute top-0 left-0 w-full flex flex-wrap items-center z-10 sm:text-left">
       <div class="container w-full">
@@ -99,7 +101,7 @@
           <div class="w-full self-end px-4 lg:w-1/2">
             <div class="relative mt-10 lg:mt-9 lg:right-0">
               <img src="img/hanifNormal.png" id="gambarA" style="max-width: 320px; height: 480" alt="Haniep" class="max-w-full mx-auto relative z-10" />
-              <img src="img/hanifDark.png" id="gambarB" style="max-width: 320px; height: 480" alt="Haniep" class="max-w-full mx-auto relative z-10" />
+              <!-- <img src="img/hanifDark.png" id="gambarB" style="max-width: 320px; height: 480" alt="Haniep" class="max-w-full mx-auto relative z-10" /> -->
             </div>
           </div>
         </div>
