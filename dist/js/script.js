@@ -3,7 +3,6 @@ window.onscroll = function () {
   const header = document.querySelector("header");
   const fixedNav = header.offsetTop;
   const toTop = document.querySelector("#to-top");
-
   if (window.scrollY > fixedNav) {
     header.classList.add("navbar-fixed");
     toTop.classList.remove("hidden");
@@ -14,16 +13,13 @@ window.onscroll = function () {
     toTop.classList.add("hidden");
   }
 };
-
 // Hamburger
 const hamburger = document.querySelector("#hamburger");
 const navMenu = document.querySelector("#nav-menu");
-
 hamburger.addEventListener("click", function () {
   hamburger.classList.toggle("hamburger-active");
   navMenu.classList.toggle("hidden");
 });
-
 // klik diluar hamburger
 window.addEventListener("click", function (e) {
   if (e.target != hamburger && e.target != navMenu) {
@@ -31,23 +27,18 @@ window.addEventListener("click", function (e) {
     navMenu.classList.add("hidden");
   }
 });
-
 // dark mode
 const darkToggle = document.querySelector("#dark-toggle");
 const html = document.querySelector("html");
-
 darkToggle.addEventListener("click", function () {
   if (darkToggle.checked) {
-    console.log("button diclick dark mode");
     html.classList.add("dark");
     localStorage.theme = "dark";
   } else {
-    console.log("button diclick light mode");
     html.classList.remove("dark");
     localStorage.theme = "light";
   }
 });
-
 // pindahkan posisi toggle sesuai mode
 if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
   darkToggle.checked = true;
